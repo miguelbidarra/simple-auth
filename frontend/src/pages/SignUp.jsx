@@ -120,7 +120,7 @@ function SignUp() {
                   <Stack spacing={1}>
                     <Button
                       variant="contained"
-                      color="secondary"
+                      color="primary"
                       sx={{ width: 1 }}
                       onClick={handleSignUp}
                     >

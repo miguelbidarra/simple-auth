@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Typography } from "@mui/material";
 import axios from "axios";
-import Navbar from "./../components/Navbar";
+import Navbar from "../components/Navbar";
 
 const Profile = () => {
   const [username, setUsername] = useState("");
@@ -26,10 +26,10 @@ const Profile = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <Navbar />
-      <Typography>Dashboard</Typography>
-    </div>
+      <Typography variant="h1">Dashboard</Typography>
+    </>
   );
 };
 
