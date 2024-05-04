@@ -1,33 +1,39 @@
-import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AppBar, Toolbar, Tabs, Tab, Typography, Box } from "@mui/material";
+import logo from "./../assets/logo.jpg";
 
 function Navbar() {
-    const isUserSignedIn = !!localStorage.getItem('token')
-    const navigate = useNavigate();
+  const isUserSignedIn = !!localStorage.getItem("token");
+  const navigate = useNavigate();
 
-    const handleSignOut = () => {
-        localStorage.removeItem('token')
-        navigate('/login')
-    }
+  const handleSignOut = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+  };
 
   return (
-    <nav className='flex justify-around p-3 border-b border-zinc-800 items-center bg-[#1a1a1a]/90 text-zinc-300'>
-        <Link to='/'><h1 className='text-3xl'>Simple Authentication</h1></Link>
-        <ul className='flex gap-6'>
-            {isUserSignedIn ? (
-                <>
-                <Link to='/dashboard'><li>Dashboard</li></Link>
-                <li><button onClick={handleSignOut}>Sign Out</button></li>
-                </>
-            ) : (
-                <>
-                <Link to='/login'><li>Login</li></Link>
-                <Link to='/signup'><li>Signup</li></Link>
-                </>
-            )}
-        </ul>
-    </nav>
-  )
+    <AppBar position="static" color="error">
+      <Toolbar>
+        <Box display="flex" justifyContent="center">
+          <img src={logo} alt="Login logo" width="50" height="auto" />
+        </Box>
+        <Tabs value={isUserSignedIn ? 0 : 1}>
+          {isUserSignedIn ? (
+            <>
+              <Tab label="Dashboard" component={Link} to="/dashboard" />
+              <Tab label="Sign Out" onClick={handleSignOut} />
+            </>
+          ) : (
+            <>
+              <Tab label="Login" component={Link} to="/login" />
+              <Tab label="Signup" component={Link} to="/signup" />
+            </>
+          )}
+        </Tabs>
+      </Toolbar>
+    </AppBar>
+  );
 }
 
-export default Navbar
+export default Navbar;

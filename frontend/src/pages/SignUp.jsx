@@ -46,7 +46,6 @@ function SignUp() {
     axios
       .post("http://localhost:4200/register", { email, username, password })
       .then(() => {
-        alert("Registration Successful");
         setEmail("");
         setUsername("");
         setPassword("");

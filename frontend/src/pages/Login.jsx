@@ -56,7 +56,6 @@ function Login() {
         password,
       });
       const token = response.data.token;
-      alert("Login successful");
       setUsername("");
       setPassword("");
       loadUsers();
@@ -93,50 +92,59 @@ function Login() {
                 alignItems="center"
                 p={4}
               >
-                <Grid item>
-                  <Box display="flex" justifyContent="center">
-                    <img
-                      src={logo}
-                      alt="Login logo"
-                      width="100"
-                      height="auto"
-                    />
-                  </Box>
-                  <Typography variant="h4" component="div">
-                    Welcome back
-                  </Typography>
+                <Grid
+                  item
+                  container
+                  justifyContent="center"
+                  alignItems="center"
+                  xs={12}
+                >
+                  <Grid item>
+                    <Box display="flex" justifyContent="center">
+                      <img
+                        src={logo}
+                        alt="Login logo"
+                        width="100"
+                        height="auto"
+                      />
+                    </Box>
+                    <Typography variant="h4" component="div">
+                      Welcome Back
+                    </Typography>
+                  </Grid>
                 </Grid>
-              </Grid>
-              <Grid item xs={12}>
-                <Stack spacing={2}>
-                  <TextField
-                    label="Username"
-                    id="outlined"
-                    type="username"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                  />
-                  <TextField
-                    label="Password"
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    fullWidth
-                  />
-                  {error && ( // Display error message
-                    <Typography color="error">{error}</Typography>
-                  )}
-                  <Button variant="contained" fullWidth onClick={handleLogin}>
-                    Login
-                  </Button>
-                  <Button
-                    variant="outlined"
-                    fullWidth
-                    onClick={handleCreateNewAccount}
-                  >
-                    Create new account
-                  </Button>
-                </Stack>
+
+                <Grid item xs={12}>
+                  <Stack spacing={2}>
+                    <TextField
+                      label="Username"
+                      id="outlined"
+                      type="username"
+                      value={username}
+                      onChange={(e) => setUsername(e.target.value)}
+                    />
+                    <TextField
+                      label="Password"
+                      type="password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      fullWidth
+                    />
+                    {error && ( // Display error message
+                      <Typography color="error">{error}</Typography>
+                    )}
+                    <Button variant="contained" fullWidth onClick={handleLogin}>
+                      Login
+                    </Button>
+                    <Button
+                      variant="outlined"
+                      fullWidth
+                      onClick={handleCreateNewAccount}
+                    >
+                      Create new account
+                    </Button>
+                  </Stack>
+                </Grid>
               </Grid>
             </Paper>
           </Grid>
