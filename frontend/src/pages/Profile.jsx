@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Card, CardContent, Typography, Button, Grid, Box } from "@mui/material";
-import Navbar from "../home/Navbar";
 
-const Profile = () => {
-  const [userName] = useState("Name");
-  const [userEmail] = useState("Email");
+const UserProfile = () => {
+  const [userName, setUserName] = useState("User");
+  const [userEmail, setUserEmail] = useState("email@email.com");
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -38,4 +37,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default UserProfile;

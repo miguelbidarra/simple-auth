@@ -9,7 +9,6 @@ import { UserProvider } from "./UserContext";
 import theme from "./theme.jsx";
 import PrivateRoutes from "./utils/PrivateRoutes.jsx";
 import Dashboard from "./pages/Dashboard";
-import Navbar from "./home/Navbar.jsx";
 import NotFound from "./pages/NotFound.jsx";
 
 function App() {

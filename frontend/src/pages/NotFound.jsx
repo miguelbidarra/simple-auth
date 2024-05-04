@@ -1,43 +1,27 @@
-import React from 'react';
-import Container from '@mui/material/Container';
-import Stack from '@mui/material/Stack';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import Fade from '@mui/material/Fade';
-import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/Grid';
-import HomeIcon from '@mui/icons-material/Home';
-
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Container, Stack, Box, Paper, Typography, Button, Fade, Divider, Grid } from "@mui/material";
+import HomeIcon from "@mui/icons-material/Home";
+import { useNavigate } from "react-router-dom";
 
 export default function PageNotFound() {
-  // fade in the page
-  const [show, setShow] = React.useState(false);
-  React.useEffect(() => {
-    setTimeout(() => { setShow(true); }, 100);
+  const [show, setShow] = useState(false);
+
+  // Use a single useEffect hook to handle the fade-in effect
+  useEffect(() => {
+    setTimeout(() => {
+      setShow(true);
+    }, 100);
   }, []);
 
-  /*
-    user React Router hook, useNavigate
-    to navigate routes
-  */
-  const reactRouterNavigate = useNavigate();
+  const navigate = useNavigate();
 
-  const handleGotoHomeButton = () => {
-    reactRouterNavigate('../dashboard', { replace: true });
-  };
+  // Simplify the handleGotoHomeButton function
+  const handleGotoHomeButton = () => navigate("../dashboard", { replace: true });
 
   return (
     <Fade in={show}>
-      <Container maxWidth="sm" sx={{ height: 1 }}>
-        <Grid
-          container
-          justifyContent="center"
-          alignItems="center"
-          sx={{ height: 1 }}
-        >
+      <Container maxWidth="md" sx={{ height: "100vh" }}>
+        <Grid container justifyContent="center" alignItems="center" sx={{ height: "100vh" }}>
           <Grid item>
             <Paper elevation={3}>
               <Box p={4}>
