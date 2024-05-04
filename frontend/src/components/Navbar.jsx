@@ -1,10 +1,9 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { AppBar, Toolbar, Tabs, Tab, Typography, Box } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import { AppBar, Tabs, Tab} from "@mui/material";
 import logo from "./../assets/logo.jpg";
 
 function Navbar() {
-  const isUserSignedIn = !!localStorage.getItem("token");
   const navigate = useNavigate();
   const [value, setValue] = React.useState("");
 

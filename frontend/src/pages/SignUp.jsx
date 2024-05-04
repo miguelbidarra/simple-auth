@@ -6,26 +6,17 @@ import {
   Paper,
   Typography,
   Button,
-  FormControl,
-  OutlinedInput,
-  InputLabel,
-  InputAdornment,
-  IconButton,
   TextField,
   Fade,
-  FormHelperText,
   Box,
 } from "@mui/material";
 import {
   ArrowBackIosNew as ArrowBackIosNewIcon,
-  Visibility,
-  VisibilityOff,
 } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function SignUp() {
-  const [users, setUsers] = useState([]);
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");

@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, {useEffect } from "react";
 import { Typography } from "@mui/material";
 import axios from "axios";
 import Navbar from "../components/Navbar";
 
 const Profile = () => {
-  const [username, setUsername] = useState("");
-  const [error, setError] = useState(null);
+
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -16,9 +15,8 @@ const Profile = () => {
             headers: { Authorization: `Bearer ${token}` },
           });
           console.log(response.data);
-          setUsername(token.data);
         } catch (error) {
-          setError(error.message);
+          console.error(error.message);
         }
       }
     };

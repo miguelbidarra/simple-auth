@@ -10,13 +10,9 @@ import {
   Button,
   Stack,
   Fade,
-  Divider,
   Box, // Add Box component for centering image
 } from "@mui/material";
-import userContext from "../UserContext";
 import logo from "./../assets/logo.jpg";
-
-const LOGIN_DELAY = 100; // Define a constant for the timeout value
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -28,7 +24,7 @@ function Login() {
   useEffect(() => {
     setTimeout(() => {
       setShow(true);
-    }, LOGIN_DELAY);
+    }, 100);
   }, []);
 
   useEffect(() => {
