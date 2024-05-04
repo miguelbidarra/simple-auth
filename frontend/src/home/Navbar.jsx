@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { AppBar, Tabs, Tab} from "@mui/material";
+import { AppBar, Tabs, Tab } from "@mui/material";
 import logo from "./../assets/logo.jpg";
 
 function Navbar() {
@@ -11,24 +11,25 @@ function Navbar() {
     setValue(newValue);
   };
 
-  const handleSignOut = () => {
-    localStorage.removeItem("token");
-    navigate("/login");
-  };
   const handleGoToDashboard = () => {
     navigate("/dashboard");
+  };
+  const handleGoToProfile = () => {
+    navigate("/profile");
   };
 
   return (
     <>
-      <AppBar position="static" sx={{ bgcolor: "#222428" }}>
+      <AppBar position="static" sx={{ bgcolor: "#222428", height: "56px" }}>
         <Tabs
           value={value}
           onChange={handleChange}
           textColor="primary"
           indicatorColor="primary"
+          sx={{ height: "100vh" }}
         >
           <Tab
+            onClick={handleGoToDashboard}
             icon={
               <img
                 src={logo}
@@ -37,10 +38,10 @@ function Navbar() {
               />
             }
             value="1"
+            sx={{ width: "100px" }} // Setting width to 100px
           />
           <Tab label="Dashboard" onClick={handleGoToDashboard} value="1" />
-          <Tab label="Profile" value="2" />
-          <Tab label="Sign Out" onClick={handleSignOut} value="3" />
+          <Tab label="Profile" onClick={handleGoToProfile} value="2" />
         </Tabs>
       </AppBar>
     </>

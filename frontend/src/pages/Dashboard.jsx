@@ -1,11 +1,9 @@
-import React, {useEffect } from "react";
+import React, { useEffect } from "react";
 import { Typography } from "@mui/material";
 import axios from "axios";
-import Navbar from "../components/Navbar";
+import Navbar from "../home/Navbar";
 
 const Profile = () => {
-
-
   useEffect(() => {
     const fetchProfile = async () => {
       const token = localStorage.getItem("token");
@@ -25,7 +23,6 @@ const Profile = () => {
 
   return (
     <>
-      <Navbar />
       <Typography variant="h1">Dashboard</Typography>
     </>
   );

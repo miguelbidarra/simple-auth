@@ -55,7 +55,7 @@ function Login() {
       setUsername("");
       setPassword("");
       loadUsers();
-      navigate("/dashboard");
+      navigate("/");
       localStorage.setItem("token", token);
     } catch (error) {
       setError(error.message); // Set error state

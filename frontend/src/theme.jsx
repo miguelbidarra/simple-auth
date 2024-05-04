@@ -25,10 +25,9 @@ const theme = createTheme({
             fontWeight: 700, // set font weight to bold when selected
           },
           textTransform: "none", // add this line to set text transform to none
-          height: "100%",
           alignItems: "center",
           justifyContent: "center",
-          flex: 1,
+          minHeight:"56px",
         },
       },
     },
