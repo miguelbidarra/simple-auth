@@ -1,8 +1,4 @@
-﻿Edit
-Full Screen
-Copy code
-
-# Simple-auth
+﻿# Simple-auth
 
 ---
 
