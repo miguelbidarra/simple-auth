@@ -27,7 +27,7 @@ function SignUp() {
   }, []);
 
   const fetchUsers = () => {
-    axios.get("http://localhost:4200/users").then((res) => {
+    axios.get("http://localhost:4200/api/users").then((res) => {
       // console.log(res.data)
     });
   };
@@ -35,7 +35,7 @@ function SignUp() {
   const handleSignUp = (event) => {
     event.preventDefault();
     axios
-      .post("http://localhost:4200/register", { email, username, password })
+      .post("http://localhost:4200/api/register", { email, username, password })
       .then(() => {
         setEmail("");
         setUsername("");

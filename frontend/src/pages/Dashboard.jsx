@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { Typography } from "@mui/material";
 import axios from "axios";
-import Navbar from "../home/Navbar";
 
 const Profile = () => {
   useEffect(() => {
@@ -9,10 +8,10 @@ const Profile = () => {
       const token = localStorage.getItem("token");
       if (token) {
         try {
-          const response = await axios.get("http://localhost:4200/users", {
+          const response = await axios.get("http://localhost:4200/api/users", {
             headers: { Authorization: `Bearer ${token}` },
           });
-          console.log(response.data);
+          //console.log(response.data); protect this route
         } catch (error) {
           console.error(error.message);
         }

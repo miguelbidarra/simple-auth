@@ -33,8 +33,8 @@ function Login() {
 
   const loadUsers = async () => {
     try {
-      const response = await axios.get("http://localhost:4200/users");
-      console.log(response.data);
+      const response = await axios.get("http://localhost:4200/api/users");
+      //console.log(response.data); Ineed to  secure this route
     } catch (error) {
       console.error(error);
     }
@@ -47,7 +47,7 @@ function Login() {
   const handleLogin = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:4200/login", {
+      const response = await axios.post("http://localhost:4200/api/login", {
         username,
         password,
       });
