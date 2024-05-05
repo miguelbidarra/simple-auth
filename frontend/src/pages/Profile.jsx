@@ -45,7 +45,7 @@ const UserProfile = () => {
   return (
     <>
       <Grid container justifyContent="center">
-        <Grid item md={6} sx={{ maxWidth: "md" }}>
+        <Grid item xs={12} md={4}>
           <Card sx={{ mt: 4, mb: 4 }}>
             <CardContent
               sx={{
@@ -54,8 +54,8 @@ const UserProfile = () => {
                 alignItems: "center",
               }}
             >
-              <Typography variant="h4">{userName}</Typography>
-              <Typography variant="h4">{userEmail}</Typography>
+              <Typography variant="h4">Username: {userName}</Typography>
+              <Typography variant="h4">Email: {userEmail}</Typography>
               <Box sx={{ mt: 2 }}>
                 <Button
                   variant="contained"
