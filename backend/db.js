@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const dbURI = "mongodb://localhost:27017/esnsync";
+const dbURI = "mongodb://localhost:27017/simple-auth";
 
 module.exports.connection = () => {
   mongoose
